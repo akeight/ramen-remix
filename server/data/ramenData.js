@@ -166,7 +166,7 @@ export const ramenData = {
   ],
 
   toppings: [
-    { id: "top_nori", name: "Nori Sheet", priceDelta: 75, allergens: [] },
+    { id: "top_nori", name: "Nori Sheet", priceDelta: 75 },
     { id: "top_menma", name: "Menma (Bamboo Shoots)", priceDelta: 100, allergens: [] },
     { id: "top_kikurage", name: "Wood Ear Mushroom", priceDelta: 100, allergens: [] },
     { id: "top_corn", name: "Sweet Corn", priceDelta: 75, allergens: [] },
