@@ -1,0 +1,21 @@
+<!-- ramen-favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- chopsticks -->
+  <path d="M38 16 L58 22" stroke="#1f2937" stroke-width="5" stroke-linecap="round"></path>
+  <path d="M34 20 L56 26" stroke="#374151" stroke-width="5" stroke-linecap="round"></path>
+
+  <!-- bowl rim -->
+  <rect x="12" y="28" width="40" height="5" rx="2" fill="#111827"></rect>
+
+  <!-- noodles (thick so they read at 16px) -->
+  <path d="M21 27c6 2 16 2 22 0" stroke="#FDE68A" stroke-width="3" stroke-linecap="round"></path>
+  <path d="M20 31c7 2 17 2 24 0" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"></path>
+
+  <!-- bowl body -->
+  <path d="M8 36h48c0 11-13 20-24 20S8 47 8 36Z" fill="#E11D48"></path>
+  <!-- subtle highlight on bowl -->
+  <path d="M12 40c4 5 11 8 20 8s16-3 20-8" fill="#fff" opacity=".12"></path>
+
+  <!-- tiny steam curl (kept bold) -->
+  <path d="M26 18c0-3 5-3 5 0s-5 3-5 6 5 3 5 6" stroke="#FCD34D" stroke-width="2.25" stroke-linecap="round"></path>
+</svg>

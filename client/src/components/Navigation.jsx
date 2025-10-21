@@ -6,12 +6,13 @@ const Navigation = () => {
     return (
         <nav>
             <ul>
-                <li><h1>Bolt Bucket 🏎️</h1></li>
+                <li><h1>RAMEN REMIX <img src='../public/ramen.svg' alt='Ramen Bowl' width={75} /></h1></li>
             </ul>
 
             <ul>
-                <li><a href='/' role='button'>Customize</a></li>
-                <li><a href='/customcars' role='button'>View Cars</a></li>
+                <li><a href='/' role='button'>Home</a></li>
+                <li><a href='/menu' role='button'>Build-A-Bowl</a></li>
+                <li><a href='/bowls' role='button'>View Ramen Bowls</a></li>
             </ul>
             
         </nav>

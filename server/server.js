@@ -2,35 +2,41 @@ import express from 'express'
 import path from 'path'
 import favicon from 'serve-favicon'
 import dotenv from 'dotenv'
-
-// import the router from your routes file
-
-
-dotenv.config()
-
-const PORT = process.env.PORT || 3000
-
-const app = express()
-
-app.use(express.json())
-
-if (process.env.NODE_ENV === 'development') {
-    app.use(favicon(path.resolve('../', 'client', 'public', 'lightning.png')))
-}
-else if (process.env.NODE_ENV === 'production') {
-    app.use(favicon(path.resolve('public', 'lightning.png')))
-    app.use(express.static('public'))
-}
-
-// specify the api path for the server to use
+import bowlsRoutes from './routes/bowls.js'  
+import catalogRoutes from './routes/catalog.js'
+import cors from 'cors'
 
 
-if (process.env.NODE_ENV === 'production') {
-    app.get('/*', (_, res) =>
-        res.sendFile(path.resolve('public', 'index.html'))
-    )
-}
+import { getCatalog } from "./controllers/catalog.js";
+import * as bowls from "./controllers/bowls.js";
 
+const app = express();
+app.use(express.json());
+
+// Health (works at BOTH paths to avoid confusion)
+app.get(["/api/health", "/health"], (_req, res) => res.json({ ok: true }));
+
+// Catalog + Bowls routes (both with /api/* and non-/api/* aliases)
+app.get(["/api/catalog", "/catalog"], getCatalog);
+
+app.get(["/api/bowls", "/bowls"], bowls.listBowls);
+app.get(["/api/bowls/:id(\\d+)", "/bowls/:id(\\d+)"], bowls.getBowl);
+app.post(["/api/bowls", "/bowls"], bowls.createBowl);
+app.patch(["/api/bowls/:id(\\d+)", "/bowls/:id(\\d+)"], bowls.updateBowl);
+app.delete(["/api/bowls/:id(\\d+)", "/bowls/:id(\\d+)"], bowls.deleteBowl);
+
+// Helpful: confirm what’s mounted
+console.table([
+  { METHOD: "GET",    PATH: "/api/health" },
+  { METHOD: "GET",    PATH: "/api/catalog" },
+  { METHOD: "GET",    PATH: "/api/bowls" },
+  { METHOD: "GET",    PATH: "/api/bowls/:id" },
+  { METHOD: "POST",   PATH: "/api/bowls" },
+  { METHOD: "PATCH",  PATH: "/api/bowls/:id" },
+  { METHOD: "DELETE", PATH: "/api/bowls/:id" },
+]);
+
+const PORT = Number(process.env.PORT || 8080);
 app.listen(PORT, () => {
-    console.log(`server listening on http://localhost:${PORT}`)
-})
+  console.log(`API listening on http://localhost:${PORT}`);
+});

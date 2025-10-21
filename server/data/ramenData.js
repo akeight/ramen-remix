@@ -8,9 +8,7 @@ export const ramenData = {
     { id: "broth", name: "Broth", selection: "single", required: true },
     { id: "noodles", name: "Noodles", selection: "single", required: true },
     { id: "proteins", name: "Proteins", selection: "multiple", min: 0, max: 3 },
-    { id: "toppings", name: "Toppings", selection: "multiple", min: 0, max: 10 },
     { id: "heat", name: "Heat Level", selection: "single", required: false },
-    { id: "extras", name: "Extras", selection: "multiple", min: 0, max: 5 }
   ],
 
   sizes: [
@@ -87,7 +85,6 @@ export const ramenData = {
       priceDelta: 0,
       tags: ["wheat"],
       allergens: ["gluten"],
-      donenessOptions: ["firm", "regular", "soft"]
     },
     {
       id: "noodle_tokyo",
@@ -95,7 +92,6 @@ export const ramenData = {
       priceDelta: 50,
       tags: ["wheat"],
       allergens: ["gluten"],
-      donenessOptions: ["firm", "regular", "soft"]
     },
     {
       id: "noodle_sapporo",
@@ -103,7 +99,6 @@ export const ramenData = {
       priceDelta: 75,
       tags: ["wheat"],
       allergens: ["gluten"],
-      donenessOptions: ["firm", "regular", "soft"]
     },
     {
       id: "noodle_udon",
@@ -111,7 +106,6 @@ export const ramenData = {
       priceDelta: 100,
       tags: ["wheat"],
       allergens: ["gluten"],
-      donenessOptions: ["regular", "soft"]
     },
     {
       id: "noodle_rice",
@@ -119,7 +113,6 @@ export const ramenData = {
       priceDelta: 125,
       tags: ["gluten-free"],
       allergens: [],
-      donenessOptions: ["regular"]
     }
   ],
 
@@ -165,22 +158,6 @@ export const ramenData = {
     }
   ],
 
-  toppings: [
-    { id: "top_nori", name: "Nori Sheet", priceDelta: 75 },
-    { id: "top_menma", name: "Menma (Bamboo Shoots)", priceDelta: 100, allergens: [] },
-    { id: "top_kikurage", name: "Wood Ear Mushroom", priceDelta: 100, allergens: [] },
-    { id: "top_corn", name: "Sweet Corn", priceDelta: 75, allergens: [] },
-    { id: "top_scallion", name: "Scallions", priceDelta: 50, allergens: [] },
-    { id: "top_bean_sprout", name: "Bean Sprouts", priceDelta: 50, allergens: [] },
-    { id: "top_spinach", name: "Blanched Spinach", priceDelta: 75, allergens: [] },
-    { id: "top_naruto", name: "Narutomaki (Fish Cake)", priceDelta: 100, allergens: ["fish"] },
-    { id: "top_butter", name: "Butter Pat", priceDelta: 75, allergens: ["dairy"] },
-    { id: "top_sesame", name: "Toasted Sesame", priceDelta: 50, allergens: ["sesame"] },
-    { id: "top_garlic_chip", name: "Crispy Garlic Chips", priceDelta: 75, allergens: [] },
-    { id: "top_black_garlic_oil", name: "Black Garlic Oil (Mayu)", priceDelta: 100, allergens: [] },
-    { id: "top_chili_oil", name: "Chili Oil Drizzle", priceDelta: 50, tags: ["spicy"], allergens: [] }
-  ],
-
   heatLevels: [
     { id: "heat_none", name: "No Heat", scovilleHint: 0 },
     { id: "heat_mild", name: "Mild", scovilleHint: 1000 },
@@ -189,48 +166,6 @@ export const ramenData = {
     { id: "heat_nuclear", name: "Nuclear", scovilleHint: 20000 }
   ],
 
-  // A few curated presets to showcase full builds (IDs reference entries above).
-  presetBowls: [
-    {
-      id: "preset_classic_tonkotsu",
-      name: "Classic Tonkotsu",
-      thumbnail: "/img/presets/tonkotsu.jpg",
-      selections: {
-        size: "size_md",
-        broth: "broth_tonkotsu",
-        noodles: { id: "noodle_hakata", doneness: "firm" },
-        proteins: ["prot_chashu_pork", "prot_ajitama"],
-        toppings: ["top_nori", "top_menma", "top_scallion", "top_black_garlic_oil"],
-        heat: "heat_mild"
-      }
-    },
-    {
-      id: "preset_spicy_tan",
-      name: "Spicy Tantanmen",
-      thumbnail: "/img/presets/tantan.jpg",
-      selections: {
-        size: "size_md",
-        broth: "broth_tantanmen",
-        noodles: { id: "noodle_sapporo", doneness: "regular" },
-        proteins: ["prot_chicken_thigh"],
-        toppings: ["top_kikurage", "top_sesame", "top_chili_oil", "top_scallion"],
-        heat: "heat_hot"
-      }
-    },
-    {
-      id: "preset_vegan_miso",
-      name: "Vegan Miso Comfort",
-      thumbnail: "/img/presets/vegan-miso.jpg",
-      selections: {
-        size: "size_lg",
-        broth: "broth_vegan_miso",
-        noodles: { id: "noodle_rice", doneness: "regular" },
-        proteins: ["prot_tofu"],
-        toppings: ["top_spinach", "top_corn", "top_garlic_chip", "top_scallion", "top_sesame"],
-        heat: "heat_med"
-      }
-    }
-  ]
 };
 
 // Convenience named exports (optional)
@@ -240,9 +175,7 @@ export const {
   broths,
   noodles,
   proteins,
-  toppings,
   heatLevels,
-  presetBowls
 } = ramenData;
 
 export default ramenData;
