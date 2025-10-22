@@ -1,20 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Shizuru&display=swap');
 
 #root {
-    --font-family: Rubik, Verdana, sans-serif;
-    --primary: rgb(115, 2, 12);
-    --primary-hover: black;
+    --font-family: Google Sans Code, Inter, Shizuru, Verdana, sans-serif;
+    --font-style: Shizuru, cursive;
+    --font-p: Inter, sans-serif;
+    --primary: rgb(181, 5, 19);
+    --primary-hover: rgb(82, 0, 0);
     --color: white;
     --h1-color: var(--color);
     --h2-color: var(--color);
     --h3-color: var(--color);
-    --card-background-color: rgba(0, 0, 0, 0.8);
-    --card-sectionning-background-color: rgba(0, 0, 0, 0.8);
+    --card-background-color: rgba(34, 33, 33, 0.863);
+    --card-sectionning-background-color: rgba(183, 5, 5, 0.723);
     --form-element-active-border-color: var(--color);
-    --form-element-placeholder-color: gray;
+    --form-element-placeholder-color: rgb(107, 107, 107);
 }
 
 #root h1 {
+    font-family: var(--font-style);
     font-size: 3rem;
     margin-bottom: 0px;
 }
@@ -26,10 +29,16 @@
 #root h3 {
     font-size: 1.5rem;
     margin-bottom: 0px;
+    font-weight: 600;
+    font-family: var(--font-family);
+    text-transform: uppercase;
 }
 
-#root p {
+p, li {
     margin-bottom: 10px;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-family: var(--font-p);
 }
 
 #root [role=button], #root button, #root input[type=submit] {
@@ -47,13 +56,23 @@
 
 #root main {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     overflow-x: hidden;
     overflow-y: hidden;
+    gap: 25px;
 }
 
 #root article {
     text-align: left;
     margin-bottom: 5px;
+}
+
+#root  p {
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+    font-family: var(--font-family);
+
 }
 
 #root article header {
@@ -65,4 +84,35 @@
     border-top: 0px;
     margin-top: 0px;
     display: flex;
+}
+
+
+.home-hero img {
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+/* Make the 3 action buttons lay out nicely and wrap on small screens */
+.card-actions {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Optional: a little polish for articles on dark backgrounds */
+.card-grid article {
+  /* If you’re using the gradient theme I gave you earlier, these match it */
+    background: var(--surface, rgba(255,255,255,0.045));
+    border: 1px solid var(--border, rgba(255,255,255,0.12));
+    backdrop-filter: saturate(140%) blur(4px);
+    -webkit-backdrop-filter: saturate(140%) blur(4px);
+    border-radius: 14px;
 }

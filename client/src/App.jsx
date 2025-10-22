@@ -5,12 +5,18 @@ import ViewAllBowls from './pages/ViewAllBowls'
 import EditBowl from './pages/EditBowl'
 import CreateBowl from './pages/CreateBowl'
 import BowlDetails from './pages/BowlDetails'
+import Home from './pages/Home'
 import './App.css'
+
 
 const App = () => {
   let element = useRoutes([
     {
-      path: '/menu',
+      path: '/',
+      element: <Home title='RAMEN REMIX | Home' />
+    },
+    {
+      path: '/bowls/new',
       element: <CreateBowl title='RAMEN REMIX | Customize' />
     },
     {
@@ -29,11 +35,11 @@ const App = () => {
 
   return (
     <div className='app'>
+      
+        <Navigation />
 
-      <Navigation />
-
-      { element }
-
+        { element }
+  
     </div>
   )
 }

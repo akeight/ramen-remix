@@ -11,7 +11,7 @@ const Navigation = () => {
 
             <ul>
                 <li><a href='/' role='button'>Home</a></li>
-                <li><a href='/menu' role='button'>Build-A-Bowl</a></li>
+                <li><a href='/bowls/new' role='button'>+ Build-A-Bowl</a></li>
                 <li><a href='/bowls' role='button'>View Ramen Bowls</a></li>
             </ul>
             
